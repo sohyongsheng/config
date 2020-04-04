@@ -1,32 +1,46 @@
 syntax on
 colorscheme desert
+let mapleader=","
 
-" Spaces and tabs
-set tabstop=4 " Number of spaces each tab visually takes. 
-set softtabstop=4 " Number of spaces each tab takes in edit mode.
-set expandtab " Tabs become spaces.
-set shiftwidth=4 "Number of spaces auto-indent makes
+" Number of spaces each tab visually takes. 
+set tabstop=4 
+" Number of spaces each tab takes in edit mode.
+set softtabstop=4 
+" Tabs become spaces.
+set expandtab 
+" Number of spaces auto-indent makes
+set shiftwidth=4 
 
-" User interface
-set number " Show line numbers.
-filetype indent plugin on " Load file-type specific indent and files.
-set autoindent " Copies indentation from previous line.
-set showmatch " Highlight matching brackets.
-set wildmenu " Command line completion, try typing doing :color <tab> in command line to see all possible colors.
-set mouse=a " Enable mouse for all (abbreviated as 'a') modes.
-set laststatus=2 " Set status bar to show if file is saved or not.
+" Show line numbers.
+set number 
+" Load file-type specific indent and files.
+filetype indent plugin on 
+" Copies indentation from previous line.
+set autoindent 
+" Highlight matching brackets.
+set showmatch 
+" Command line completion, try typing doing :color <tab> in command line to see all possible colors.
+set wildmenu 
+" Enable mouse for all (abbreviated as 'a') modes.
+set mouse=a 
+" Set status bar to show if file is saved or not.
+set laststatus=2 
 highlight statusline ctermbg=0 ctermfg=0
-set hlsearch " Highlight search.
+" Highlight search.
+set hlsearch 
 highlight Pmenu ctermbg=0 ctermfg=7
 highlight PmenuSel ctermbg=6 ctermfg=7
-set incsearch " Incrementally highlight as we search.
-set relativenumber " Set relative line numbers.
+" Incrementally highlight as we search.
+set incsearch 
+" Set relative line numbers.
+set relativenumber 
 
 " Git commits
 au FileType gitcommit set tw=72
 
 " Yanking and pasting
-set clipboard=unnamed " Allows you to yank in one window and paste into another window. 
+" Allows you to yank in one window and paste into another window. 
+set clipboard=unnamed 
 
 " Add following characters for text objects.
 for s:char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '$' ]
@@ -36,5 +50,19 @@ for s:char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%'
     execute 'onoremap a' . s:char . ' :normal va' . s:char . '<CR>'
 endfor
 
-:inoremap jk <Esc>
+" Use jk to Escape so that right hand doesn't need to leave home row.
+inoremap jk <Esc>
+" Search down into sub-directories and provide tab-completion for all file-related tasks.
+set path+=** 
+" List all available tag matches.
+nnoremap <C-]> g<C-]> 
+" Run ctags to generate tags file.
+command! Maketags !ctags -nR 
 
+" Disable banner.
+let g:netrw_banner = 0
+" Tree style.
+let g:netrw_liststyle = 3
+
+" Snippets.
+nnoremap <leader>pdb :read ~/.vim/snippets/pdb<CR>
