@@ -22,7 +22,7 @@ set showmatch
 " Command line completion, try typing doing :color <tab> in command line to see all possible colors.
 set wildmenu 
 " Enable mouse for all (abbreviated as 'a') modes.
-set mouse=a 
+" set mouse=a 
 " Set status bar to show if file is saved or not.
 set laststatus=2 
 highlight statusline ctermbg=0 ctermfg=0
@@ -53,7 +53,8 @@ endfor
 " Use jk to Escape so that right hand doesn't need to leave home row.
 inoremap jk <Esc>
 " Search down into sub-directories and provide tab-completion for all file-related tasks.
-set path+=** 
+" files in the current working directory.
+" set path+=** 
 " List all available tag matches.
 nnoremap <C-]> g<C-]> 
 " Run ctags to generate tags file.
