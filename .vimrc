@@ -66,7 +66,6 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
 " Snippets.
-" nnoremap <leader>pdb :read ~/.vim/snippets/pdb<CR>
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
 
 
