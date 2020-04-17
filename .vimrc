@@ -68,4 +68,3 @@ let g:netrw_liststyle = 3
 " Snippets.
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
 
-
