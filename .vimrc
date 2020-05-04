@@ -40,7 +40,7 @@ au FileType gitcommit set tw=72
 
 " Yanking and pasting
 " Allows you to yank in one window and paste into another window. 
-set clipboard=unnamed 
+set clipboard=unnamedplus
 
 " Add following characters for text objects.
 for s:char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '$' ]
