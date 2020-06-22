@@ -4,7 +4,7 @@
 [core]
 	editor = vim
 [alias]
-	co = checkout
+	cho = checkout
 	br = branch
 	ci = commit
 	st = status
