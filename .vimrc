@@ -68,6 +68,8 @@ let g:netrw_liststyle = 3
 " Snippets.
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
 
-" Use double slashes '//' for commenting.
+" File-type specific commands.
+" Use double slashes '//' for commenting in C++.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
