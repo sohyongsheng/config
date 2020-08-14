@@ -39,8 +39,10 @@ set relativenumber
 au FileType gitcommit set tw=72
 
 " Yanking and pasting
-" Allows you to yank in one window and paste into another window. 
-set clipboard=unnamedplus
+" Copy to CLIPBOARD
+" Allows you to yank in one window and paste into another window
+" by copying to CLIPBOARD. 
+set clipboard=unnamed
 
 " Add following characters for text objects.
 for s:char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '$' ]
@@ -58,7 +60,9 @@ inoremap jk <Esc>
 " List all available tag matches.
 nnoremap <C-]> g<C-]> 
 " Run ctags to generate tags file.
-command! Maketags !ctags -nR --exclude="env"
+command! Maketags !ctags -nR --exclude='env'
+" Make backspace work on Mac.
+set backspace=indent,eol,start
 
 " Disable banner.
 let g:netrw_banner = 0
@@ -67,7 +71,9 @@ let g:netrw_liststyle = 3
 
 " Snippets.
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
+" Use 2-spacing indent for YAML file.
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" Use double slashes '//' for commenting.
-autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+" Automatically insert the current comment leader after hitting <Enter> in Insert mode.
+set formatoptions+=r
 
