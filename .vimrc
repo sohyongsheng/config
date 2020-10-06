@@ -73,3 +73,5 @@ nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" Automatically insert the current comment leader after hitting <Enter> in Insert mode.
+set formatoptions+=r
