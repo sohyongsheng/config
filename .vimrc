@@ -67,6 +67,7 @@ let g:netrw_liststyle = 3
 
 " Snippets.
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
+nnoremap <leader>db o# TODO Debug<Esc>
 
 " File-type specific commands.
 " Use double slashes '//' for commenting in C++.
