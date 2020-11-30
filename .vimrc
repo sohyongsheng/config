@@ -71,6 +71,7 @@ let g:netrw_liststyle = 3
 
 " Snippets.
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
+nnoremap <leader>db o# TODO Debug<Esc>
 " Use 2-spacing indent for YAML file.
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
